@@ -1,38 +1,178 @@
-.App {
-  text-align: center;
+body {
+  background: #051017;
+  color: white;
+  font-family: 'Helvetica', 'Arial', sans-serif;
+}
+nav ul {
+  list-style-type: none;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.outline {
+  width: 100vw;
+  height: 10vh;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.nav-bar {
+  display: flex;
+  flex-direction: row;
+  width: 60%;
+  height: 100%;
+  left: 20%;
+  position: relative;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.nav-logo {
+  width: 30%;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  align-items: center;
+  cursor: pointer;
+}
+
+.nav-button {
+  width: 70%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
+.nav-contact-button {
+  background: #0EBAD4;
+  background: linear-gradient(to left, #32cbe2 50%, #5fdaed 50%) right ;
+  background-size: 200%;
+  width: 110px !important;
+  height: 50%;
+  font-weight: bold;
   color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  cursor: pointer;
+  transition: 0.2s ease-out;
 }
 
-.App-link {
-  color: #61dafb;
+.nav-contact-button:hover {
+  background-position: left;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.nav-label {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  width: 70px;
+  margin-left: 25px;
+  margin-right: 25px;
+  cursor: pointer;
+  color: white;
+  color: linear-gradient(to left, #32cbe2 50%, #5fdaed 50%) right ;
+  transition: 0.2s ease-out;
+  font: 16px Arial;
+}
+
+.nav-label.active {
+  color: #5fdaed;
+}
+
+.nav-label:hover {
+  color: #5fdaed;
+}
+
+.slide-content {
+  height: 100%;
+  left: 20%;
+  width: 60%;
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+}
+
+.content-direct {
+  background-color: #3c4145;
+  width: 40px;
+  height: 5px;
+  margin-left: 5px;
+  margin-right: 5px;
+  border-radius: 30px;
+  cursor: pointer;
+}
+
+.content-direct.active {
+  background-color: #5fdaed;
+  width: 70px;
+  cursor: default;
+}
+
+.left-arrow, .right-arrow {
+  width: 20vw;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.arrow {
+  position: relative;
+  width: 2.5rem;
+  height: 2.5rem;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.arrow::before, .arrow::after {
+  content:"";
+  position: absolute;
+  background: #5fdaed;
+  border-radius: 0.2rem;
+  display: block;
+}
+
+.arrow.left, .arrow.right {
+  width: 1.667em;
+}
+
+.arrow.left::before, .arrow.left::after {
+  transform: rotate(45deg);
+}
+
+.arrow.left::after {
+  transform: rotate(-45deg);
+}
+
+.arrow.right::before, .arrow.right::after {
+  transform: rotate(-45deg);
+}
+
+.arrow.right::after {
+  transform: rotate(45deg);
+}
+
+.arrow.left::before, .arrow.right::before {
+  top: 55%;
+  left: -5%;
+  height: 25%;
+  width: 110%;
+}
+
+.arrow.left::after, .arrow.right::after {
+  bottom: 55%;
+  left: -5%;
+  height: 25%;
+  width: 110%;
+}
+
+
+.content {
+  height: 80vh;
+  display: flex;
+  flex-direction: row;
+}
+
+.main-content {
+  width: 60vw;
 }
