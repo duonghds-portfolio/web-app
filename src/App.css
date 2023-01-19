@@ -176,3 +176,55 @@ nav ul {
 .main-content {
   width: 60vw;
 }
+
+.intro {
+  min-width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  transition: 0.5s ease;
+}
+
+.intro .intro-text {
+  width: 70%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: -70px;
+}
+
+.intro-name {
+  display: flex;
+  flex-direction: row;
+  font-size: 40px;
+  margin-top: 20px;
+}
+
+.intro-name .bold-name {
+  color: #5fdaed;
+}
+
+.intro-text .list-icon {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: row;
+}
+
+.intro-text .list-icon .social-icon {
+  width: 40px;
+  color: #5fdaed;
+  margin-right: 20px;
+}
+
+.intro-img .large-img {
+  width: 300px;
+}
+
+.container-content {
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  overflow: hidden;
+  position:relative;
+}

@@ -1,8 +1,8 @@
 import LinkedinImg from './linkedin.png'
 import FacebookImg from './facebook.png'
 import GmailImg from './gmail.png'
-import DuongHDSImg from './duonghds-img-cropped.png'
-const Intro = ({id}) => {
+import DuongHDSImg from './duonghds-img-2-cropped.png'
+const Intro2 = ({id}) => {
     return(
         <div className="intro" id={id}>
             <div className="intro-text">
@@ -34,4 +34,4 @@ const Intro = ({id}) => {
     )
 }
 
-export default Intro;
+export default Intro2;
