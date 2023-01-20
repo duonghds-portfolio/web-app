@@ -264,7 +264,7 @@ nav ul {
   width: 110px !important;
   height: 50%;
   font-weight: bold;
-  color: #5fdaed;
+  color: #5fdaed !important;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -276,6 +276,103 @@ nav ul {
 }
 
 .resume:hover {
+  background-position: left;
+}
+
+.contact-form-layout {
+  z-index: 99;
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0,0,0,0);
+  overflow: hidden;
+  visibility: hidden;
+  transform: scale(0);
+  transition: 0.3s ease-out;
+}
+
+.contact-form .globel-tech {
+  width: 100%;
+}
+
+.contact-form {
+  width: 60vw;
+  height: 60vh;
+  background-color: white;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  transform: scale(1);
+  transition: 0.4s ease-out;
+}
+
+.contact-form input {
+  width: 80%;
+  height: 30px;
+  margin-bottom: 10px;
+  padding-left: 10px;
+  border-top-style: hidden;
+  border-right-style: hidden;
+  border-left-style: hidden;
+  border-bottom-style: hidden;
+  background-color: rgba(255, 255, 255, 0.8);
+  margin-top: 40px;
+}
+
+.contact-form textarea {
+  width: 80%;
+  height: 150px;
+  padding-left: 10px;
+  padding-top: 5px;
+  border-top-style: hidden;
+  border-right-style: hidden;
+  border-left-style: hidden;
+  border-bottom-style: hidden;
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+.contact-form .form-title {
+  color: black;
+}
+
+.contact-form .input-form {
+  width: 60%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+}
+
+.contact-form .background-form {
+  width: 40%;
+  height: 100%;
+}
+.contact-form .send-button { 
+  background: #0EBAD4;
+  background: linear-gradient(to left, #32cbe2 50%, #5fdaed 50%) right ;
+  background-size: 200%;
+  width: 220px !important;
+  height: 40px;
+  font-weight: bold;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  cursor: pointer;
+  transition: 0.2s ease-out;
+  margin-top: 10px;
+}
+
+.contact-form .send-button:hover {
   background-position: left;
 }
 
@@ -296,4 +393,3 @@ nav ul {
     font-size: 22px;
   }
 }
-

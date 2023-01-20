@@ -1,5 +1,6 @@
 import React from 'react'
 import { Outlet } from "react-router-dom";
+import ContactForm from '../../components/ContactForm';
 import ContactButton from "./ContactButton";
 import NavLabel from "./NavLabel";
 import NavLogo from "./NavLogo";
@@ -86,6 +87,7 @@ export default class Layout extends React.Component {
 		const { pageActive } = this.state
 		return (
 			<>
+				<ContactForm />
 				<div className="outline">
 					<div className="nav-bar">
 						<NavLogo labelName={AboutMeLabel} updatePageActive={this.updatePageActive} />
