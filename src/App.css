@@ -287,7 +287,7 @@ nav ul {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: rgba(0,0,0,0);
+  background-color: rgba(0,0,0,0.4);
   overflow: hidden;
   visibility: hidden;
   transform: scale(0);
@@ -324,6 +324,10 @@ nav ul {
   margin-top: 40px;
 }
 
+.contact-form input:focus {
+  outline: none;
+}
+
 .contact-form textarea {
   width: 80%;
   height: 150px;
@@ -334,6 +338,10 @@ nav ul {
   border-left-style: hidden;
   border-bottom-style: hidden;
   background-color: rgba(255, 255, 255, 0.8);
+}
+
+.contact-form textarea:focus {
+  outline: none;
 }
 
 .contact-form .form-title {
