@@ -3,6 +3,17 @@ body {
   color: white;
   font-family: 'Helvetica', 'Arial', sans-serif;
 }
+
+a, a:active, a:visited {
+  color: white;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #5fdaed;
+}
+
+
 nav ul {
   list-style-type: none;
 }
@@ -68,12 +79,16 @@ nav ul {
   margin-right: 25px;
   cursor: pointer;
   color: white;
-  color: linear-gradient(to left, #32cbe2 50%, #5fdaed 50%) right ;
-  transition: 0.2s ease-out;
   font: 16px Arial;
+  transition: 0.3s ease;
 }
 
 .nav-label.active {
+  color: #5fdaed;
+  transform: scale(1.2);
+}
+
+.nav-label.active a {
   color: #5fdaed;
 }
 
@@ -193,7 +208,10 @@ nav ul {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin-top: -70px;
+}
+
+.wall-text span {
+  color: #5fdaed;
 }
 
 .intro-name {
@@ -220,7 +238,14 @@ nav ul {
 }
 
 .intro-img .large-img {
-  width: 300px;
+  width: 400px;
+}
+.intro-touch {
+  height: 10vh;
+  margin-left: -25px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }
 
 .container-content {
@@ -229,4 +254,46 @@ nav ul {
   flex-direction: row;
   overflow: hidden;
   position:relative;
+  transition: 0.5s ease;
 }
+
+.resume {
+  background: white;
+  background: linear-gradient(to left, white 50%, #f6f8f8 50%) right ;
+  background-size: 200%;
+  width: 110px !important;
+  height: 50%;
+  font-weight: bold;
+  color: #5fdaed;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  cursor: pointer;
+  transition: 0.2s ease-out;
+  margin-left: 25px;
+}
+
+.resume:hover {
+  background-position: left;
+}
+
+@media only screen and (min-width: 1280px) {
+  .intro-name {
+    font-size: 25px;
+  }
+}
+
+@media only screen and (min-width: 1368px) {
+  .intro-name {
+    font-size: 40px;
+  }
+}
+
+@media only screen and (min-width: 1920px) {
+  body {
+    font-size: 22px;
+  }
+}
+

@@ -4,14 +4,16 @@ import ContactButton from "./ContactButton";
 import NavLabel from "./NavLabel";
 import NavLogo from "./NavLogo";
 import SlideContent from "./SlideContent";
-const MaxContentPage = 4;
-// const NextAction = "next";
-// const PreAction = "pre";
+const MaxContentPage = 2;
+const AboutMeLabel = "About me";
+const ProjectsLabel = "Projects";
+const SkillsLabel = "Skills";
 export default class Layout extends React.Component {
 	constructor(props) {
 		super(props)
 		this.state = {
 			contentPage: 1,
+			pageActive: AboutMeLabel,
 		}
 	}
 
@@ -71,19 +73,26 @@ export default class Layout extends React.Component {
 		let id = `content-${contentPage}`
 		let content = document.getElementById(id)
 		content.style.marginLeft = "-100%";
-		this.setNewActiveSlide(contentPage, contentPage+1)
+		this.setNewActiveSlide(contentPage, contentPage + 1)
+	}
+
+	updatePageActive = (label) => {
+		this.setState({
+			pageActive: label
+		})
 	}
 
 	render() {
+		const { pageActive } = this.state
 		return (
 			<>
 				<div className="outline">
 					<div className="nav-bar">
-						<NavLogo />
+						<NavLogo labelName={AboutMeLabel} updatePageActive={this.updatePageActive} />
 						<div className="nav-button">
-							<NavLabel labelName="About me" isActive={true} />
-							<NavLabel labelName="Project" />
-							<NavLabel labelName="Skills" />
+							<NavLabel labelName={AboutMeLabel} path="/" pageActive={pageActive} updatePageActive={this.updatePageActive} />
+							<NavLabel labelName={ProjectsLabel} path="/projects" pageActive={pageActive} updatePageActive={this.updatePageActive} />
+							<NavLabel labelName={SkillsLabel} path="/skills" pageActive={pageActive} updatePageActive={this.updatePageActive} />
 							<ContactButton />
 						</div>
 					</div>
