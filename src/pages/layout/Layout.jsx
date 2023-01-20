@@ -15,45 +15,63 @@ export default class Layout extends React.Component {
 		}
 	}
 
-	backPage = () => {
-		let contentPage = this.state.contentPage
-		if(contentPage === 1) {
-			for(let i=1;i<=MaxContentPage-1;i++) {
+	gotoPage = (targetPage) => {
+		let currentPage = this.state.contentPage;
+		if (currentPage === targetPage) {
+			return
+		}
+		this.setNewActiveSlide(currentPage, targetPage)
+		if (currentPage > targetPage) {
+			for (let i = currentPage; i >= targetPage; i--) {
 				let id = `content-${i}`
 				let content = document.getElementById(id)
-				content.style.marginLeft = "-100%";
+				content.style.marginLeft = "0%";
 			}
-			this.setState({
-				contentPage: MaxContentPage
-			})
+			return
+		}
+		for (let i = currentPage; i < targetPage; i++) {
+			let id = `content-${i}`
+			let content = document.getElementById(id)
+			content.style.marginLeft = "-100%";
+		}
+	}
+
+	setNewActiveSlide = (inactivePage, activePage) => {
+		let inactiveId = `content-direct-${inactivePage}`
+		let activeId = `content-direct-${activePage}`
+		//inactive current direct
+		let direct = document.getElementById(inactiveId)
+		direct.classList.remove("active")
+		//active pre direct
+		let directPre = document.getElementById(activeId)
+		directPre.classList.add("active")
+		this.setState({
+			contentPage: activePage
+		})
+	}
+
+	backPage = () => {
+		let contentPage = this.state.contentPage
+		if (contentPage === 1) {
 			return
 		}
 		let prePage = contentPage - 1
+		this.setNewActiveSlide(contentPage, prePage)
 		let id = `content-${prePage}`
 		let content = document.getElementById(id)
 		content.style.marginLeft = "0%";
-		this.setState({
-			contentPage: prePage
-		})
 	}
 
 	nextPage = () => {
 		// const { contentPage } = this.state
 		let contentPage = this.state.contentPage
+		if (contentPage === MaxContentPage) {
+			return
+		}
 		let id = `content-${contentPage}`
 		let content = document.getElementById(id)
 		content.style.marginLeft = "-100%";
-		if(contentPage >= MaxContentPage) {
-			contentPage = 0;
-			for(let i=MaxContentPage;i>=1;i--) {
-				let id = `content-${i}`
-				let content = document.getElementById(id)
-				content.style.marginLeft = "0%";
-			}
-		}
-		this.setState({
-			contentPage: contentPage + 1
-		})
+		this.setNewActiveSlide(contentPage, contentPage+1)
 	}
 
 	render() {
@@ -71,18 +89,18 @@ export default class Layout extends React.Component {
 					</div>
 				</div>
 				<div className="content">
-					<div className="left-arrow" onClick={this.backPage}>
-						<i className="arrow left"></i>
+					<div className="left-arrow">
+						<i className="arrow left inactive" onClick={this.backPage}></i>
 					</div>
 					<div className="main-content">
 						<Outlet />
 					</div>
-					<div className="right-arrow" onClick={this.nextPage}>
-						<i className="arrow right"></i>
+					<div className="right-arrow">
+						<i className="arrow right" onClick={this.nextPage}></i>
 					</div>
 				</div>
 				<div className="outline">
-					<SlideContent />
+					<SlideContent maxContentPage={MaxContentPage} gotoPage={this.gotoPage} />
 				</div>
 			</>
 		)
