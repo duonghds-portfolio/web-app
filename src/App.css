@@ -291,7 +291,7 @@ nav ul {
   align-items: center;
   background-color: rgba(0,0,0,0.4);
   overflow: hidden;
-  visibility: visible;
+  visibility: hidden;
   transform: scale(01);
   transition: 0.3s ease-out;
 }
