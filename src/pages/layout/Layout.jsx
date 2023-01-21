@@ -1,4 +1,5 @@
 import React from 'react'
+import { NotificationContainer } from 'react-notifications';
 import { Outlet } from "react-router-dom";
 import ContactForm from '../../components/ContactForm';
 import ContactButton from "./ContactButton";
@@ -66,7 +67,6 @@ export default class Layout extends React.Component {
 	}
 
 	nextPage = () => {
-		// const { contentPage } = this.state
 		let contentPage = this.state.contentPage
 		if (contentPage === MaxContentPage) {
 			return
@@ -113,6 +113,7 @@ export default class Layout extends React.Component {
 				<div className="outline">
 					<SlideContent maxContentPage={MaxContentPage} gotoPage={this.gotoPage} />
 				</div>
+				<NotificationContainer />
 			</>
 		)
 	}

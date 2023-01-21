@@ -1,3 +1,5 @@
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css');
+
 body {
   background: #051017;
   color: white;
@@ -280,7 +282,7 @@ nav ul {
 }
 
 .contact-form-layout {
-  z-index: 99;
+  z-index: 3;
   width: 100vw;
   height: 100vh;
   position: absolute;
@@ -289,8 +291,8 @@ nav ul {
   align-items: center;
   background-color: rgba(0,0,0,0.4);
   overflow: hidden;
-  visibility: hidden;
-  transform: scale(0);
+  visibility: visible;
+  transform: scale(01);
   transition: 0.3s ease-out;
 }
 
@@ -371,7 +373,7 @@ nav ul {
   font-weight: bold;
   color: white;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: center;
   text-align: center;
   align-items: center;
@@ -382,6 +384,11 @@ nav ul {
 
 .contact-form .send-button:hover {
   background-position: left;
+}
+
+.contact-form .send-button.loading {
+  background: #bcf3f3;
+  cursor: default;
 }
 
 @media only screen and (min-width: 1280px) {
