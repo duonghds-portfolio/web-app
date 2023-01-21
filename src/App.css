@@ -1,4 +1,4 @@
-@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css');
+@import url('https://fonts.googleapis.com/css2?family=Reenie+Beanie&display=swap');
 
 body {
   background: #051017;
@@ -389,6 +389,43 @@ nav ul {
 .contact-form .send-button.loading {
   background: #bcf3f3;
   cursor: default;
+}
+
+.wall-container {
+  width: 100vw;
+  height: 90vh;
+  position: absolute
+}
+
+.sticky-note {
+  color:#000;
+  display:block;
+  height:10em;
+  width:10em;
+  padding:1em;
+  margin-left: 20px; 
+  box-shadow: 5px 5px 7px rgba(33,33,33,.7);
+  transition: transform .15s linear;
+  position: absolute;
+}
+
+.sticky-note:hover, .sticky-note:focus {
+  box-shadow:10px 10px 7px rgba(0,0,0,.7);
+  transform: scale(1.25) !important;
+  position:relative;
+  z-index:5;
+}
+
+.sticky-note .title {
+  font-weight: bold;
+  font-size: 1.5rem;
+  outline: none;
+}
+
+.sticky-note .text {
+  font-size: 1.5rem;
+  font-family: 'Reenie Beanie';
+  outline: none;
 }
 
 @media only screen and (min-width: 1280px) {

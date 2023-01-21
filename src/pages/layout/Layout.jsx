@@ -9,13 +9,25 @@ import SlideContent from "./SlideContent";
 const MaxContentPage = 2;
 const AboutMeLabel = "About me";
 const ProjectsLabel = "Projects";
-const SkillsLabel = "Skills";
+const WallLabel = "Wall";
 export default class Layout extends React.Component {
 	constructor(props) {
-		super(props)
+		super(props);
+		let pathname = window.location.pathname
 		this.state = {
 			contentPage: 1,
-			pageActive: AboutMeLabel,
+			pageActive: this.getLabel(pathname)
+		}
+	}
+
+	getLabel(pathname) {
+		switch (pathname) {
+			case "/wall":
+				return WallLabel
+			case "/projects":
+				return ProjectsLabel
+			default:
+				return AboutMeLabel
 		}
 	}
 
@@ -85,6 +97,7 @@ export default class Layout extends React.Component {
 
 	render() {
 		const { pageActive } = this.state
+		let needSwitch = pageActive !== WallLabel
 		return (
 			<>
 				<ContactForm />
@@ -94,25 +107,25 @@ export default class Layout extends React.Component {
 						<div className="nav-button">
 							<NavLabel labelName={AboutMeLabel} path="/" pageActive={pageActive} updatePageActive={this.updatePageActive} />
 							<NavLabel labelName={ProjectsLabel} path="/projects" pageActive={pageActive} updatePageActive={this.updatePageActive} />
-							<NavLabel labelName={SkillsLabel} path="/skills" pageActive={pageActive} updatePageActive={this.updatePageActive} />
+							<NavLabel labelName={WallLabel} path="/wall" pageActive={pageActive} updatePageActive={this.updatePageActive} />
 							<ContactButton />
 						</div>
 					</div>
 				</div>
 				<div className="content">
-					<div className="left-arrow">
+					{needSwitch ? <div className="left-arrow">
 						<i className="arrow left inactive" onClick={this.backPage}></i>
-					</div>
+					</div> : null}
 					<div className="main-content">
 						<Outlet />
 					</div>
-					<div className="right-arrow">
+					{needSwitch ? <div className="right-arrow">
 						<i className="arrow right" onClick={this.nextPage}></i>
-					</div>
+					</div> : null}
 				</div>
-				<div className="outline">
+				{needSwitch ? <div className="outline">
 					<SlideContent maxContentPage={MaxContentPage} gotoPage={this.gotoPage} />
-				</div>
+				</div> : null}
 				<NotificationContainer />
 			</>
 		)

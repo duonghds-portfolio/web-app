@@ -10,7 +10,7 @@ const Intro = ({id}) => {
                 <div className="intro-name" style={{marginTop: '0px', marginBottom: '20px'}}>Software Engineer</div>
                 <div className="wall-text">Hi my boss, I am Duong Hoang, and I don't know who you are.
                     But if you love <span>animals</span>, love <span>games</span>, love <span>football</span> or <span>technologies</span> then I hope you can
-                    be my friend and we will have a lot of converstation through the night
+                    be my friend and we will have a lot of converstations through the night.
                 </div>
                 <div className="intro-touch">
                     <ContactButton />
