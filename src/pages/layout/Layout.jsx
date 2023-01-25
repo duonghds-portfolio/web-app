@@ -101,7 +101,7 @@ export default class Layout extends React.Component {
 		return (
 			<>
 				<ContactForm />
-				<div className="outline">
+				<div className="outline header">
 					<div className="nav-bar">
 						<NavLogo labelName={AboutMeLabel} updatePageActive={this.updatePageActive} />
 						<div className="nav-button">
@@ -123,7 +123,7 @@ export default class Layout extends React.Component {
 						<i className="arrow right" onClick={this.nextPage}></i>
 					</div> : null}
 				</div>
-				{needSwitch ? <div className="outline">
+				{needSwitch ? <div className="outline footer">
 					<SlideContent maxContentPage={MaxContentPage} gotoPage={this.gotoPage} />
 				</div> : null}
 				<NotificationContainer />

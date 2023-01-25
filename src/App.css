@@ -450,3 +450,69 @@ nav ul {
     font-size: 22px;
   }
 }
+
+@media only screen and (max-width: 768px) {
+  .header {
+    height: 5vh;
+  }
+
+  .footer {
+    height: 0vh;
+  }
+
+  .intro {
+    height: 45%;
+  }
+
+  .nav-bar .nav-button, .left-arrow, .right-arrow, .slide-content, .intro-img { 
+    display: none;
+  }
+  .nav-bar .nav-logo {
+    width: 100%;
+  }
+
+  .nav-logo img {
+    margin-top: 20px;
+  }
+
+  .main-content {
+    width: 100vw;
+    height: 90vh;
+  }
+
+  .intro-name {
+    margin-top: 10px;
+    margin-bottom: 0px !important;
+  }
+
+  .wall-text {
+    margin-top: 10px;
+  }
+
+  .intro .intro-text {
+    width: 100%;
+    padding: 20px;
+  }
+  
+  .container-content {
+    flex-direction: column;
+  }
+
+  .intro-name {
+    font-size: 25px;
+  }
+
+  .contact-form {
+    width: 90vw;
+    height: 60vh;
+  }
+
+  .contact-form .globel-tech {
+    width: unset;
+    height: 100%;
+  }
+  
+  .contact-form .input-form {
+    width: 100%;
+  }
+}
