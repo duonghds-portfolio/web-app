@@ -19,9 +19,10 @@ export default class StickyNote extends React.Component {
         this.setState({
             text: text
         })
+        this.saveNote(text)
     }
 
-    focusNote = () => {
+    focusNote = (e) => {
         this.inputFocus.setFocus()
     }
 
@@ -34,23 +35,55 @@ export default class StickyNote extends React.Component {
             let range = document.createRange();
             let selection = window.getSelection();
             range.selectNodeContents(e.currentTarget);
-            range.setStart(e.currentTarget.firstChild,e.currentTarget.innerText.length);
-            range.setEnd(e.currentTarget.firstChild,e.currentTarget.innerText.length);
+            let length = 0;
+            if(e.currentTarget.childNodes.length > 1) {
+                if(e.currentTarget.lastChild.innerHTML) {
+                    length =  e.currentTarget.lastChild.innerHTML.length;
+                }else {
+                    length = e.currentTarget.lastChild.length;
+                }
+            }else {
+                length = e.currentTarget.innerHTML.length;
+            }
+            range.setStart(e.currentTarget.lastChild, length);
+            range.setEnd(e.currentTarget.lastChild, length);
             selection.removeAllRanges();
             selection.addRange(range);
         }
     }
 
-    saveNote = () => {
-
+    saveNote = (text) => {
+        const { id, readOnly } = this.props;
+        if(text === this.props.text) {
+            return
+        }
+        if(text === "") {
+            return
+        }
+        if(readOnly) {
+            return
+        }
+        let host = process.env.REACT_APP_DUONGHDS_PORTFOLIO_API_HOST
+        fetch(`${host}/api/note`, {
+            mode: "cors",
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+                noteID: id,
+                text: text,
+                readOnly: readOnly,
+                expiredTime: (new Date()).toJSON()
+            })
+        })
+        .then(resp => {
+            console.log(resp.status)
+        });
     }
 
     render() {
-        const { backgroundColor, rotate, readOnly } = this.props;
-        const { text } = this.state;
+        const { backgroundColor, rotate, readOnly, text } = this.props;
         return (
             <div className="sticky-note" onClick={this.focusNote} 
-                onBlur={this.saveNote}
                 style={{ background: backgroundColor, transform: `rotate(${rotate}deg)`}}>
                 <p  ref={this.inputFocus.ref}
                     onFocus={this.selectRange}
