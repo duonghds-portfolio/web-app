@@ -22,7 +22,6 @@ export default class Layout extends React.Component {
 	}
 
 	componentDidMount() {
-		console.log(window.location.pathname)
 		if(this.mobileAndTabletcheck() && window.location.pathname !== "/") {
 			window.location.href = "/"
 		}
