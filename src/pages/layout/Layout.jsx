@@ -104,7 +104,8 @@ export default class Layout extends React.Component {
 
 	updatePageActive = (label) => {
 		this.setState({
-			pageActive: label
+			pageActive: label,
+			contentPage: 1
 		})
 	}
 
