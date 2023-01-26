@@ -433,6 +433,12 @@ nav ul {
   outline: none;
 }
 
+@media only screen and (max-width: 1220px) {
+  .intro-name {
+    font-size: 25px;
+  }
+}
+
 @media only screen and (min-width: 1280px) {
   .intro-name {
     font-size: 25px;
