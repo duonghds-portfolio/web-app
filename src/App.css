@@ -432,6 +432,18 @@ nav ul {
   outline: none;
 }
 
+.intro-img.confession {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.intro-img.duba {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 @media only screen and (max-width: 1220px) {
   .intro-name {
     font-size: 25px;
