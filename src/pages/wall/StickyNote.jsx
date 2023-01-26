@@ -88,13 +88,13 @@ export default class StickyNote extends React.Component {
                 <p  ref={this.inputFocus.ref}
                     onFocus={this.selectRange}
                     onKeyDown={e => {
-                        if(e.currentTarget.innerText.length >= 100) {
+                        if(e.currentTarget.innerText.length >= 100 && e.key !== "Backspace") {
                             e.preventDefault();
                             return;
                         }
                     }}
                     onKeyUp={e => {
-                        if(e.currentTarget.innerText.length >= 100) {
+                        if(e.currentTarget.innerText.length >= 100 && e.key !== "Backspace") {
                             e.preventDefault();
                             return;
                         }
