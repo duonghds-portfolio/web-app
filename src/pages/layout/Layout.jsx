@@ -7,6 +7,7 @@ import ContactButton from "./ContactButton";
 import NavLabel from "./NavLabel";
 import NavLogo from "./NavLogo";
 import SlideContent from "./SlideContent";
+import NavFooter from './NavFooter';
 const MaxContentPage = 2;
 const AboutMeLabel = "About me";
 const ProjectsLabel = "Projects";
@@ -140,6 +141,7 @@ export default class Layout extends React.Component {
 				{needSwitch ? <div className="outline footer">
 					<SlideContent maxContentPage={MaxContentPage} gotoPage={this.gotoPage} />
 				</div> : null}
+				<NavFooter/>
 				<NotificationContainer />
 			</>
 		)

@@ -187,7 +187,7 @@ nav ul {
 
 
 .content {
-  height: 80vh;
+  height: 75vh;
   display: flex;
   flex-direction: row;
 }
@@ -444,6 +444,15 @@ nav ul {
   align-items: center;
 }
 
+.nav-footer {
+  height: 5vh;
+  z-index: 5;
+  position: absolute;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+}
+
 @media only screen and (max-width: 1220px) {
   .intro-name {
     font-size: 25px;
@@ -478,12 +487,24 @@ nav ul {
   }
 
   .intro {
-    height: 45%;
+    height: 40%;
   }
 
   .nav-bar .nav-button, .left-arrow, .right-arrow, .slide-content, .intro-img { 
     display: none;
   }
+
+  #intro-img-1{
+    display: block;
+    position: absolute;
+    z-index: 0;
+    bottom: 0;
+  }
+
+  #content-2 {
+    display: none;
+  }
+
   .nav-bar .nav-logo {
     width: 100%;
   }
@@ -492,9 +513,22 @@ nav ul {
     margin-top: 20px;
   }
 
+  .content {
+    height: 90vh;
+  }
+
+  .nav-footer {
+    height: 5vh;
+    z-index: 5;
+    position: absolute;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+  }
+
   .main-content {
     width: 100vw;
-    height: 90vh;
+    height: 95vh;
   }
 
   .intro-name {
@@ -509,10 +543,12 @@ nav ul {
   .intro .intro-text {
     width: 100%;
     padding: 20px;
+    z-index: 2;
   }
   
   .container-content {
     flex-direction: column;
+    justify-content: center;
   }
 
   .intro-name {

@@ -1,6 +1,9 @@
 import ContactButton from '../layout/ContactButton';
 import DuongHDSImg from './duonghds-intro-1.png'
 import Resume from './Resume';
+import LinkedinImg from './linkedin.png'
+import FacebookImg from './facebook.png'
+import GmailImg from './gmail.png'
 const Intro = ({id}) => {
     return(
         <div className="intro" id={id}>
@@ -16,8 +19,19 @@ const Intro = ({id}) => {
                     <ContactButton />
                     <Resume />
                 </div>
+                <div className="list-icon">
+                    <a href="https://www.linkedin.com/in/duonghds/" rel="noreferrer" target="_blank">
+                        <img className="social-icon" src={LinkedinImg} alt="linkedin" />
+                    </a>
+                    <a href="https://www.facebook.com/hdsduong24" rel="noreferrer" target="_blank">
+                        <img className="social-icon" src={FacebookImg} alt="facebook" />
+                    </a>
+                    <a href="mailto:duonghoang2411@gmail.com">
+                        <img className="social-icon" src={GmailImg} alt="gmail" />
+                    </a>
+                </div>
             </div>
-            <div className="intro-img">
+            <div id="intro-img-1" className="intro-img">
                 <img className="large-img" src={DuongHDSImg} alt="duonghds" />
             </div>
         </div>
