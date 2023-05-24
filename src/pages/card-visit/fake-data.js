@@ -15,6 +15,8 @@ export const APIData = {
         lastName: "Luc",
         fb: "@duyenduyen62",
         ig: "@nyanya_6295",
-        linkedin: "linkedin.com/in/duyenluc"
+        linkedin: "@duyenluc",
+        phone: "0909000999",
+        email: "gaidep_pro_vjp_8x@gmail.com"
     },
 }

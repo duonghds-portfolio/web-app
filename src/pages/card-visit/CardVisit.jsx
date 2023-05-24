@@ -7,6 +7,8 @@ import CompanyImg from './company.png';
 import InstaImg from './instagram.png';
 import FacebookImg from './facebook.png';
 import LinkedinImg from './linkedin.png';
+import PhoneImg from './smartphone.png';
+import GmailImg from './gmail.png';
 import { Row } from './Row';
 
 import { API } from './fake-data';
@@ -26,7 +28,7 @@ export default class CardVisit extends React.Component{
     render() {
         if(!this.state) return null;
         const { mainColor, gradientColor, avatarURL, title, companyName,
-                nickname, lastName, ig, fb, linkedin } = this.state.data;
+                nickname, lastName, ig, fb, linkedin, email, phone } = this.state.data;
         return (
             <div className="shift-asia">
                 <div className="content">
@@ -50,6 +52,8 @@ export default class CardVisit extends React.Component{
                             <Row mainColor={mainColor} icon={InstaImg} text={ig} />
                             <Row mainColor={mainColor} icon={FacebookImg} text={fb} />
                             <Row mainColor={mainColor} icon={LinkedinImg} text={linkedin} />
+                            <Row mainColor={mainColor} icon={PhoneImg} text={phone} />
+                            <Row mainColor={mainColor} icon={GmailImg} text={email} />
                         </div>
                     </div>
                 </div>
