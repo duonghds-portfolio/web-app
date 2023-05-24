@@ -161,14 +161,14 @@
     margin-left: 20px;
 }
 
-.arrow {
+.arrow.card {
     height: 1.5rem
 }
 
-.arrow::before, .arrow::after {
+.arrow.card::before, .arrow.card::after {
     background: black;
 }
 
-.arrow.right {
+.arrow.right.card {
     width: 1.03em
 }

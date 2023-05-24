@@ -12,7 +12,7 @@ export const Row = ({mainColor, icon, text, urlLink, firstIdChar, notAppend}) =>
         <a className="row" style={{ borderBottom: `0.5px solid ${mainColor}`}}
             href={link}>
             <img src={icon} alt="" />
-            <p style={{ color: '#888B8D', fontWeight: 'bold' }}>{textTruncate(text)} <i className="arrow right"></i></p>
+            <p style={{ color: '#888B8D', fontWeight: 'bold' }}>{textTruncate(text)} <i className="arrow right card"></i></p>
         </a>
     )
 }
