@@ -34,6 +34,21 @@
     z-index: 1;
 }
 
+.shift-asia .content .company-info .edit-icon {
+    width: 100vw;
+    height: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
+.shift-asia .content .company-info .edit-icon img {
+    width: 20px;
+    height: 20px;
+    margin-right: 5px;
+    margin-top: 5px;
+}
+
 .content .background-img {
     height: 35vh;
     width: 100vw;

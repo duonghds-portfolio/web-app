@@ -9,6 +9,7 @@ import FacebookImg from './facebook.png';
 import LinkedinImg from './linkedin.png';
 import PhoneImg from './smartphone.png';
 import GmailImg from './gmail.png';
+import EditingIcon from './editing.png';
 import { Row } from './Row';
 
 import { API } from './fake-data';
@@ -24,11 +25,15 @@ export default class CardVisit extends React.Component{
             })
         }
     }
+
+    edit = () => {
+        alert("will support when release")
+    }
     
     render() {
         if(!this.state) return null;
         const { mainColor, gradientColor, avatarURL, title, companyName,
-                nickname, lastName, ig, fb, linkedin, email, phone } = this.state.data;
+                nickname, lastName, ig, fb, linkedin, email, phone, companySite } = this.state.data;
         return (
             <div className="shift-asia">
                 <div className="content">
@@ -36,7 +41,11 @@ export default class CardVisit extends React.Component{
                         background: mainColor,
                         //eslint-disable-next-line
                         background: gradientColor,
-                        opacity: 1}}></div>
+                        opacity: 1}}>
+                        <div className="edit-icon">
+                            <img src={EditingIcon} alt="" onClick={this.edit}/>
+                        </div>
+                    </div>
                     <div className="main-info">
                         <div className="header-info">
                             <div className="avatar" style={{ border: `3px solid ${mainColor}` }}>
@@ -48,12 +57,12 @@ export default class CardVisit extends React.Component{
                             </div>
                         </div>
                         <div className="extra-info">
-                            <Row mainColor={mainColor} icon={CompanyImg} text={companyName} />
-                            <Row mainColor={mainColor} icon={InstaImg} text={ig} />
-                            <Row mainColor={mainColor} icon={FacebookImg} text={fb} />
-                            <Row mainColor={mainColor} icon={LinkedinImg} text={linkedin} />
-                            <Row mainColor={mainColor} icon={PhoneImg} text={phone} />
-                            <Row mainColor={mainColor} icon={GmailImg} text={email} />
+                            <Row mainColor={mainColor} urlLink={companySite} notAppend={true} icon={CompanyImg} text={companyName} />
+                            <Row mainColor={mainColor} urlLink={"https://instagram.com/"}  firstIdChar="@" icon={InstaImg} text={ig} />
+                            <Row mainColor={mainColor} urlLink={"https://facebook.com/"}  firstIdChar="@" icon={FacebookImg} text={fb} />
+                            <Row mainColor={mainColor} urlLink={"https://linkedin.com/in/"}  firstIdChar="@" icon={LinkedinImg} text={linkedin} />
+                            <Row mainColor={mainColor} urlLink={"tel:"} icon={PhoneImg} text={phone} />
+                            <Row mainColor={mainColor} urlLink={"mailto:"} icon={GmailImg} text={email} />
                         </div>
                     </div>
                 </div>
