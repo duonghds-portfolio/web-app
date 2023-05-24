@@ -1,0 +1,145 @@
+.shift-asia {
+    background-color: white;
+    height: 100vh;
+    width: 100vw;
+}
+
+.shift-asia-logo {
+    height: 10vh;
+    display: flex;
+    flex-direction: row;
+    padding-left: 20px;
+    padding-right: 20px;
+    justify-content: center;
+    align-items: center;
+    white-space: break-spaces;
+    overflow: hidden;
+}
+
+.nav-logo {
+    height: 100%;
+    padding: 0 25px;
+}
+
+.shift-asia .content {
+    height: 85vh;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.shift-asia .content .company-info {
+    height: 35vh;
+    width: 100%;
+    z-index: 1;
+}
+
+.content .background-img {
+    height: 35vh;
+    width: 100vw;
+    position: absolute;
+}
+
+.content .background-img img {
+    height: 100%;
+    width: 100%
+}
+
+.shift-asia .content .main-info {
+    margin-top: -10vh;
+    height: 60vh;
+    width: calc(100% - 60px);
+    z-index: 2;
+    background-color: white;
+    /* border-top-left-radius: 50px; */
+    /* border-top-right-radius: 50px; */
+    display: flex;
+    flex-direction: column;
+    padding: 0 30px;
+    
+}
+
+.main-info .header-info {
+    display: flex;
+    flex-direction: row;
+}
+
+.shift-asia .content .main-info .avatar {
+    height: 100px;
+    width: 100px;
+    margin-top: -50px;
+    border-radius: 50%;
+    margin-right: 20px;
+}
+
+.shift-asia .content .main-info .avatar img {
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+}
+
+.shift-asia .content .main-info .name {
+    /* color: #C3465A; */
+    color: #888B8D;
+    font-weight: bold;
+    margin-top: 10px;
+    font-size: 20px;
+}
+
+.shift-asia .content .main-info .title {
+    /* color: #C3465A; */
+    color: rgb(92, 89, 89);
+    font-weight: bold;
+    font-size: 12px;
+}
+
+.shift-asia .main-info .extra-info {
+    margin-top: 5vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.shift-asia .main-info .extra-info .row {
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    height: 50px;
+    margin-bottom: 40px;
+    padding-bottom: 10px;
+}
+
+.shift-asia .main-info .extra-info .row img {
+    width: 50px;
+    height: 50px;
+    margin-right: 30px;
+}
+
+.shift-asia .main-info .extra-info .row p {
+    width: calc(100% - 50px);
+    text-align: end;
+    display: flex;
+    font-weight: bold;
+    height: 50px;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.shift-asia .main-info .extra-info .row p i {
+    margin-left: 20px;
+}
+
+.arrow {
+    height: 1.5rem
+}
+
+.arrow::before, .arrow::after {
+    background: black;
+}
+
+.arrow.right {
+    width: 1.03em
+}

@@ -6,6 +6,7 @@ import Home from './pages/home/Home';
 import NoPage from './pages/not-found/NotFound';
 import Wall from './pages/wall/Wall';
 import Projects from './pages/projects/Projects';
+import CardVisit from './pages/card-visit/CardVisit';
 function App() {
   return (
     <BrowserRouter>
@@ -16,6 +17,7 @@ function App() {
           <Route path="wall" element={<Wall />} />
           <Route path="*" element={<NoPage />} />
         </Route>
+        <Route path="card-visit" element={<CardVisit />} />
       </Routes>
     </BrowserRouter>
   );
