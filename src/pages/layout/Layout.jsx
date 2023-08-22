@@ -141,7 +141,6 @@ export default class Layout extends React.Component {
 				{needSwitch ? <div className="outline footer">
 					<SlideContent maxContentPage={MaxContentPage} gotoPage={this.gotoPage} />
 				</div> : null}
-				<NavFooter/>
 				<NotificationContainer />
 			</>
 		)
