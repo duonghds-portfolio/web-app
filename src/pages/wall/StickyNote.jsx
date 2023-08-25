@@ -10,16 +10,25 @@ export default class StickyNote extends React.Component {
     constructor(props) {
         super(props);
         this.inputFocus = utilizeFocus()
+        this.debounceTimeout = null;
         this.state = {
             text: this.props.text,
         }
     }
 
+    debounce = (callback, delay) =>  {
+    if (this.debounceTimeout){
+        clearTimeout(this.debounceTimeout);
+    }
+        this.debounceTimeout = setTimeout(callback, delay);
+    }
+
     onChangeText = (text) => {
         this.setState({
             text: text
+        }, () => {
+            this.debounce(this.saveNote, 1000)
         })
-        this.saveNote(text)
     }
 
     focusNote = (e) => {
@@ -52,7 +61,8 @@ export default class StickyNote extends React.Component {
         }
     }
 
-    saveNote = (text) => {
+    saveNote = () => {
+        const { text } = this.state;
         const { id, readOnly } = this.props;
         if(text === this.props.text) {
             return
@@ -88,18 +98,18 @@ export default class StickyNote extends React.Component {
                 <p  ref={this.inputFocus.ref}
                     onFocus={this.selectRange}
                     onKeyDown={e => {
-                        if(e.currentTarget.innerText.length >= 100 && e.key !== "Backspace") {
+                        if(e.currentTarget.innerText.length >= 150 && e.key !== "Backspace") {
                             e.preventDefault();
                             return;
                         }
                     }}
                     onKeyUp={e => {
-                        if(e.currentTarget.innerText.length >= 100 && e.key !== "Backspace") {
+                        if(e.currentTarget.innerText.length >= 150 && e.key !== "Backspace") {
                             e.preventDefault();
                             return;
                         }
+                        this.onChangeText(e.target.innerText)
                     }}
-                    onBlur={e => this.onChangeText(e.target.innerText)}
                     contentEditable={!readOnly} suppressContentEditableWarning={true} className="text">{text}
                 </p>
             </div>
