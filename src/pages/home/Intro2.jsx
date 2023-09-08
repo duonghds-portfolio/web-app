@@ -9,10 +9,8 @@ const Intro2 = ({id}) => {
                 <div className="hello-msg">Ideal of life</div>
                 <div className="intro-name">Enjoy the&nbsp;<div className="bold-name">Job</div></div>
                 <div className="intro-name" style={{marginTop: '0px', marginBottom: '20px'}}>Enjoy the&nbsp;<div className="bold-name">World</div></div>
-                <div className="wall-text">I always wanna learn and enjoy the culture of countries from the world, 
-                especially UK and Nordic(Northern Europe) countries.
-                Let's start the conversation and be friend first with some ways below.
-                You also can click to "Contact Me" or send direct to my email: <span>duonghoang2411@gmail.com</span></div>
+                <div className="wall-text">I have a strong desire to learn and immerse myself in the diverse cultures of countries worldwide, with a special fascination for the UK and Nordic (Northern European) regions. My dream is to explore every corner of the globe.</div>
+                <div className="wall-text">Let's initiate a conversation and become friends through the following methods. You can also click on "Contact Me" or reach out directly via email at: <span>duonghoang2411@gmail.com</span></div>
                 <div className="list-icon">
                     <a href="https://www.linkedin.com/in/duonghds/" rel="noreferrer" target="_blank">
                         <img className="social-icon" src={LinkedinImg} alt="linkedin" />
