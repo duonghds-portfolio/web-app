@@ -120,7 +120,7 @@ export default class Layout extends React.Component {
 						<NavLogo labelName={AboutMeLabel} updatePageActive={this.updatePageActive} />
 						<div className="nav-button">
 							<NavLabel labelName={AboutMeLabel} path="/" pageActive={pageActive} updatePageActive={this.updatePageActive} />
-							<NavLabel labelName={WallLabel} path="/wall" pageActive={pageActive} updatePageActive={this.updatePageActive} />
+							{/* <NavLabel labelName={WallLabel} path="/wall" pageActive={pageActive} updatePageActive={this.updatePageActive} /> */}
 							<ContactButton />
 						</div>
 					</div>
